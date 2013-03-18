@@ -1,0 +1,27 @@
+<openejb-jar xmlns="http://www.openejb.org/xml/ns/openejb-jar-1.1">
+
+    <pojo-deployment class-name="simple.Producer">
+    
+        <properties>
+            cxf.jax-rs.providers = jsonProvider, jaxbProvider
+        </properties>
+        
+    </pojo-deployment>
+    
+    <pojo-deployment class-name="simple.ContainerObject">
+    
+        <properties>
+            cxf.jax-rs.providers = jsonProvider, jaxbProvider
+        </properties>
+        
+    </pojo-deployment>
+    
+    <pojo-deployment class-name="simple.EmbeddedObject">
+    
+        <properties>
+            cxf.jax-rs.providers = jsonProvider, jaxbProvider
+        </properties>
+        
+    </pojo-deployment>
+    
+</openejb-jar>
