@@ -15,23 +15,20 @@ public class Producer {
 	private static final String acl_allow_origin = "Access-Control-Allow-Origin";
 
 	@GET
-    public Response produce()
+    	public Response produce()
 	{   
-		System.out.println("produce aangeroepen"); 
-		
 		List<EmbeddedObject> embeddedObjectList = new ArrayList(); 
     	
 		EmbeddedObject eo1 = new EmbeddedObject(100, 200); 
 		EmbeddedObject eo2 = new EmbeddedObject(300, 400); 
     	
-    	embeddedObjectList.add(eo1); 
-    	//embeddedObjectList.add(eo2); 
+    		embeddedObjectList.add(eo1); 
+    		//embeddedObjectList.add(eo2);  // now exactly one element in list
 
-    	ContainerObject json= new ContainerObject(1, embeddedObjectList);
-		//String json = "Het werkt!!!"; 
+    		ContainerObject containterObject = new ContainerObject(1, embeddedObjectList);
     	
-    	Response response = Response.ok(json).header(acl_allow_origin, "*").build();
+    		Response response = Response.ok(containerObject).header(acl_allow_origin, "*").build();
     	
-    	return response; 
-    }
+    		return response; 
+    	}
 }
